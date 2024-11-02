@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            
+        }
+        th,td,tr{
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <<table align=center>
+        <tr>
+            <th>restorantId</th>
+            <th>restorentName</th>
+            <th>restorentLocatio</th>
+        </tr>
+        <tr>
+            {% for item in locdata %}
+                <td>{{ item}}</td>
+                 <td>{{ item.RName }}</td>
+                <td>{{ item.RLocation }}</td> 
+            </tr>
+        {% endfor %} 
+        
+</body>
+</html>
+
+
+
+<!-- <ul>
+    {% if locdata %}
+        {% for item in locdata %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    {% else %}
+        <li>No data available</li>
+    {% endif %}
+</ul> -->

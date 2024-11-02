@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Food Records</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: block;
+            color: #ecf0f1;
+        }
+
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        input[type="number"]::placeholder, input[type="text"]::placeholder {
+            color: #7f8c8d;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <form action="../updateFoodRecords/" method="POST">
+        {% csrf_token %}
+        <h1>Update Food Information</h1>
+
+        <label for="fid">Food ID:</label>
+        <input type="number" name="foodid" id="fid" placeholder="Enter Food ID" value="">
+
+        <label for="fname">Food Name:</label>
+        <input type="text" name="foodname" id="fname" placeholder="Enter Updated Name" value="">
+
+        <label for="fprice">Food Price:</label>
+        <input type="number" name="foodprice" id="fprice" placeholder="Enter the Price of Food" value="">
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Restaurant Data</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e; /* Dark background */
+            display: flex;
+            background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fpremium-photo%2Frestaurant-blur-background-design-resource_236836-16729.jpg%3Fw%3D740&f=1&nofb=1&ipt=f018f1486024c90dc7b405ca6340eb1e2dcf8648984cc58e0b6226db7379ae94&ipo=images');
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: transparent;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            width: 500px; /* Increased width */
+            color: #fff;
+            position: relative; /* To position the button inside the form */
+        }
+        h1 {
+            color: #f4f4f4;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        label {
+            font-size: 16px;
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 10px;
+            background-color: #444;
+            color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px; /* Smaller button */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px; /* Reduced font size */
+            position: absolute;
+            bottom: 20px;
+            right: 20px; /* Positioned in the bottom-right corner */
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        button{
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px; /* Smaller button */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px; /* Reduced font size */
+            position: left;
+            bottom: 20px;
+            right: 20px; /* Positioned in the bottom-right corner */
+        
+        }
+
+    </style>
+</head>
+<body>
+    <form action="../restorentmessage/" method="POST">
+        {% csrf_token %}
+        <h1>Insert Restaurant Data</h1>
+
+        <label for="rid">Restaurant ID</label>
+        <input type="number" name="rid" id="rid" placeholder="Enter restaurant ID" required>
+
+        <label for="rname">Restaurant Name</label>
+        <input type="text" name="rname" id="rname" placeholder="Enter restaurant name" required>
+
+        <label for="rlocation">Restaurant Location</label>
+        <input type="text" name="rlocation" id="rlocation" placeholder="Enter restaurant location" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

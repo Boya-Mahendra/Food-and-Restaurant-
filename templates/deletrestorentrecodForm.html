@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Restaurant Record</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #555;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Additional Style for Responsiveness */
+        @media (max-width: 768px) {
+            form {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            input, button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="../deletRestorentrecord/" method="POST">
+        {% csrf_token %}
+        <h1>Delete Restaurant Record</h1>
+        <label for="rid">Restaurant ID:</label>
+        <input type="number" name="rid" id="rid" placeholder="Enter the restaurant ID" required>
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>
